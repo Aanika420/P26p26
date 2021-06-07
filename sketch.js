@@ -17,11 +17,21 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-	circle1 = new Circle(300,150,15);
-	circle2 = new Circle(350,150,15);
-	circle3 = new Circle(400,150,15);
-	circle4 = new Circle(450,150,15);
-	circle5 = new Circle(500,150,15);
+
+	ground = createSprite(350,400,100,100);
+
+	circle1 = new Circle(300,150,25);
+	circle2 = new Circle(350,150,25);
+	circle3 = new Circle(400,150,25);
+	circle4 = new Circle(450,150,25);
+	circle5 = new Circle(500,150,25);
+
+	chain1 = new Chain(circle1.body,ground.body,-50*2,0);
+	chain2 = new Chain(circle2.body,ground.body);
+	chain3 = new Chain(circle3.body,ground.body);
+	chain4 = new Chain(circle4.body,ground.body);
+	chain5 = new Chain(circle5.body,ground.body);
+
 	Engine.run(engine);
 }
 
@@ -34,6 +44,14 @@ function draw() {
   circle3.display();
   circle4.display();
   circle5.display();
+
+  chain1.display();
+  chain2.display();
+  chain3.display();
+  chain4.display();
+  chain5.display();
+
+  ground.display();
   drawSprites();
 }
 
