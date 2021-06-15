@@ -5,17 +5,17 @@ class Circle {
             'friction':1.0,
             'density':1.0
         }
-        this.circle = Matter.Bodies.circle(x, y, radius, options);
-        World.add(world, this.circle);
+        this.body = Bodies.circle(x, y, radius, options);
+        World.add(world, this.body);
     }
     display(){
         push();
-        translate(this.circle.position.x, this.circle.position.y);
-        rotate(angle);
+        translate(this.body.position.x, this.body.position.y);
+        rotate(this.body.angle);
         imageMode(CENTER);
         fill("pink");
         ellipseMode(RADIUS);
-        ellipse(0,0,25,25);
+        ellipse(0,0,25);
         pop();
     }
 }
